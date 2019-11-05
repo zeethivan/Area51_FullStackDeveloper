@@ -1,0 +1,16 @@
+<form class="login" [formGroup]="signupForm" (ngSubmit)="enviar(signupForm.value)" *ngIf="visible">
+	<h2 class="login-header">{{headline}}</h2>
+	<div class="login-container">
+		<div class="input-container">
+			<input formControlName="email" type="email" placeholder="E-mail">
+			<div class="msg-error" *ngIf="signupForm.get('email').hasError('required') && signupForm.get('email').touched"> *Es necesario introducir E-mail</div>
+		</div>
+		<div class="input-container">
+			<input formControlName="password" type="password" placeholder="Password">
+			<div class="msg-error" *ngIf="signupForm.get('password').hasError('required') && signupForm.get('password').touched">*Es necesario introducir password</div>
+		</div>
+		
+		<button [disabled]="signupForm.invalid" type="submit" (click)="validForm()">LOG IN</button>
+	</div>
+  </form>
+  <app-dashboard *ngIf="!visible"></app-dashboard>

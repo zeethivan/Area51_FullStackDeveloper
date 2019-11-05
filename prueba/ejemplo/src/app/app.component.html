@@ -1,0 +1,11 @@
+<form [formGroup]="signupForm" (ngSubmit)="enviar(signupForm.value)">
+  <h2>Ingrese sus credenciales</h2>
+  <label>Email</label>
+  <input formControlName="email" type="email" placeholder="Correo">
+  <div *ngIf="signupForm.get('email').hasError('required') && signupForm.get('email').touched"> Es necesario introducir Email</div> 
+  <br>
+  <label>Contraseña</label>
+  <input formControlName="clave" type="password" placeholder="contraseña">
+  <br>
+  <button [disabled]="signupForm.invalid" type="submit">Registrarse</button>
+</form>

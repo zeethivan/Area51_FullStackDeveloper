@@ -1,0 +1,9 @@
+<div *ngIf="visible">
+        <h2>DASHBOARD</h2>
+        <textarea></textarea>
+        <br>
+        <button (click)="cambiarVisibilidad()"> Cerrar Sesion</button> 
+</div>
+
+
+<login [headline]="titulo" *ngIf="!visible" (onLogging)="login()"></login>

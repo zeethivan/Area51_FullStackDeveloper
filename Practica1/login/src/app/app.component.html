@@ -1,0 +1,5 @@
+<login [headline]="titulo" *ngIf="visible" (onLogging)="login()"></login>
+<login *ngIf="!visible"></login>
+<button (click)="cambiarVisibilidad()">Cambiar</button>
+
+
